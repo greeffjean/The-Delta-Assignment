@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To get spin up this project on your local machine you need a good interent connection and node.js installed on your machine. 
 
-1. Open a new terminal in the root of this project and run `npx yarn install`, if you do not have yarn then run `npm install yarn`.
+1. Open a new terminal in the root of this project and run `npx yarn install`, if you do not have yarn then run `npm install yarn`, finally spin up a development server with `npx yarn run start` - localhost3000.
 
 2. To run test in your terminal at the root of this project run `npx yarn run test`.
 
