@@ -25,7 +25,7 @@ const GameCard: React.FunctionComponent<TGameCardProps> = ({
 }) => {
   return (
     <>
-      <Card sx={{ width: size, margin: 1 }}>
+      <Card role={"gameCard"} sx={{ width: size, margin: 1 }}>
         <CardContent>
           <Typography variant="h5" component="div">
             {title}
