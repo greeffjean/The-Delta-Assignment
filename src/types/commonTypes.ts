@@ -1,0 +1,1 @@
+export type TData = { [key: string]: string | number | (string | number)[] }
