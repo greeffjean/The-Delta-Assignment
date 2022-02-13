@@ -26,6 +26,10 @@ Some old tricks Ive learned worth mentioning is debouncing functions for input s
 
 API Mocker -- https://mswjs.io/
 
+# If I had more time
+
+I would improve the look and feel, and add esLint to the project.
+
 # Time spent
 
 I spent quite a while on this, 7h, without Typescript I could have done it in 5h, and if I was not using redux maybe 4h. 
