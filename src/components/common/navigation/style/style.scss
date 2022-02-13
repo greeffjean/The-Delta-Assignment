@@ -1,0 +1,30 @@
+.MuiToolbar-root {
+    background: white;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 16px -1px white;
+
+    img {
+        width: 50px
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 15px;
+        flex-grow: 1;
+
+        a {
+            margin: 0 4px;
+            color: rgb(31, 29, 29);
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                color: darkcyan;
+            }
+            &:active {
+                color: darkcyan;
+            }
+        }
+    }
+}

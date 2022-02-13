@@ -1,1 +1,6 @@
-export type TData = { [key: string]: string | number | (string | number)[] }
+
+export type TPayloadData = [
+  {[key: string]: number | string}
+];
+
+export type TData = {[key: string]: string | number}

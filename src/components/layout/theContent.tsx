@@ -24,9 +24,9 @@ const TheContent: FunctionComponent<TProps> = ({ userAccess }) => {
     }
 
     return (
-        <Container>
+        <Container sx={{margin: 5}}>
             {routes}
-            <Redirect from={'/'} to={'/home'} />
+            <Redirect from={'/'} to={'/all-deals'} />
         </Container>
     )
 };
