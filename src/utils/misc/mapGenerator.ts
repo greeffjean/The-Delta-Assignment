@@ -6,7 +6,6 @@ type TStoreData = {
     images: any,
 }
 
-
 export const genStoreMap = (data: TStoreData[]) => {
 const dict: { [key: string]: string | number } = {};
 data.forEach(i => {

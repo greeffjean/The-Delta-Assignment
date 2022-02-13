@@ -1,5 +1,5 @@
-import { Alert, CircularProgress } from "@mui/material";
-import React, { FC, memo, useEffect, useState, useCallback } from "react";
+import React, { FC, memo, useEffect, useState } from "react";
+import { Alert } from "@mui/material";
 import { connect } from "react-redux";
 import { requestDealLookup, requestGamesData } from "../../redux/main/actions";
 import {
@@ -8,12 +8,11 @@ import {
   selectIsLoading,
 } from "../../redux/main/selectors";
 import { TAppState } from "../../types/appState";
-import { TData, TPayloadData } from "../../types/commonTypes";
+import { TData } from "../../types/commonTypes";
 import GameCard from "../common/gameCard/gameCard";
 import HeaderBar from "./components/headerBar";
 import "./style/style.scss";
 import FilterToolbar from "./components/filterBar";
-import { TDeal } from "../../redux/main/reducer";
 import { useHistory } from "react-router-dom";
 
 const mapStateToProps = (state: TAppState) => ({
@@ -39,7 +38,6 @@ const AllDealsComponent: FC<TGameProps> = ({
   requestGamesData,
   requestDealLookup
 }) => {
-  const [search, setSearch] = useState<string>("");
   const [selection, setSelection] = useState<TData[] | null>(null);
 
   const data: TData[] | null = selection || games;
@@ -136,22 +134,3 @@ export default memo(
   connect(mapStateToProps, mapDispatchToProps)(AllDealsComponent)
 );
 
-// dealID: "IVj099Jarz6odiHw35jmGZyckpjmQeAmYI0%2BFyn8i1A%3D"
-// dealRating: "9.9"
-// gameID: "145838"
-// internalName: "XCOM2"
-// isOnSale: "1"
-// lastChange: 1644537572
-// metacriticLink: "/game/pc/xcom-2"
-// metacriticScore: "88"
-// normalPrice: "59.99"
-// releaseDate: 1454630400
-// salePrice: "3.60"
-// savings: "93.999000"
-// steamAppID: "268500"
-// steamRatingCount: "75498"
-// steamRatingPercent: "84"
-// steamRatingText: "Very Positive"
-// storeID: "1"
-// thumb: "https://cdn.cloudflare.steamstatic.com/steam/apps/268500/capsule_sm_120.jpg?t=1643925173"
-// title: "XCOM 2"

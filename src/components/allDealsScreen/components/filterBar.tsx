@@ -17,7 +17,6 @@ type TFilterToolbarProps = {
 const FilterToolbar: FC<TFilterToolbarProps> = ({
   filterResults
 }) => {
-  const [search, setSearch] = useState<string>("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currFilter, setCurrFilter] = useState<string>("");
 
@@ -36,7 +35,6 @@ const FilterToolbar: FC<TFilterToolbarProps> = ({
   const handleCheck = (label: string) => {
     let r = false;
     selectedFilters.includes(label) ? r = true : r = false;
-
     return r
   };
 

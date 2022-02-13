@@ -14,28 +14,37 @@ function* requestDealLookupSuccessFunc() {
   let data: any;
   let error: any;
 
-  yield axios.all([
-    axios.get('https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15'),
-    axios.get('https://www.cheapshark.com/api/1.0/stores')
-  ]).then( axios.spread((resp1, resp2) => {
-    data = {
-      deals: resp1.data,
-      stores: genStoreMap(resp2.data)
-    }
-  })).catch(err => error = err)
+  yield axios
+    .all([
+      axios.get(
+        "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=15"
+      ),
+      axios.get("https://www.cheapshark.com/api/1.0/stores"),
+    ])
+    .then(
+      axios.spread((resp1, resp2) => {
+        data = {
+          deals: resp1.data,
+          stores: genStoreMap(resp2.data),
+        };
+      })
+    )
+    .catch((err) => (error = err));
 
   yield !error && data && put(requestGamesDataSuccess(data));
   yield error && !data && put(requestGamesDataFail(error));
 }
 
 function* reqDealLookupFunc(action: any) {
-
   let data: any;
   let error: any;
 
-  yield axiosInstance.get(`https://www.cheapshark.com/api/1.0/deals?id=${action.payload}`).then((response) => {
-    data = response.data
-  }).catch(err => error = err)
+  yield axiosInstance
+    .get(`https://www.cheapshark.com/api/1.0/deals?id=${action.payload}`)
+    .then((response) => {
+      data = response.data;
+    })
+    .catch((err) => (error = err));
 
   yield !error && data && put(requestDealLookupSuccess(data));
   yield error && !data && put(requestGamesDataFail(error));
@@ -43,5 +52,5 @@ function* reqDealLookupFunc(action: any) {
 
 export function* mainSaga() {
   yield takeLatest(requestGamesData, requestDealLookupSuccessFunc);
-  yield takeLatest(requestDealLookup, reqDealLookupFunc)
+  yield takeLatest(requestDealLookup, reqDealLookupFunc);
 }

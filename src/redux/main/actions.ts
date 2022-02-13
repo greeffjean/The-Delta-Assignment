@@ -1,6 +1,6 @@
 import { createAction } from 'redux-act';
-import { TData, TPayloadData } from '../../types/commonTypes';
-import { TDeal, TDealLookup } from './reducer';
+import { TPayloadData } from '../../types/commonTypes';
+import {  TDealLookup } from './reducer';
 
 export const requestGamesData = createAction('REQUEST_GAMES_DATA');
 export const requestGamesDataSuccess = createAction<TPayloadData>('REQUEST_GAMES_DATA_SUCCESS');
