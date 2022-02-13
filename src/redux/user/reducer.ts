@@ -7,7 +7,8 @@ export type TUserState = {
 const defaultState: TUserState = {
     userAccess: {
        allDeals: true,
-       allStores: true
+       allStores: true,
+       dealDetails: true
     }
 }
 

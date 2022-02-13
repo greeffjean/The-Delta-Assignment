@@ -1,6 +1,9 @@
 
-export type TPayloadData = [
-  {[key: string]: number | string}
-];
-
 export type TData = {[key: string]: string | number}
+
+export type TPayloadData = {
+  deals: TData[]
+  stores: TData[]
+};
+
+

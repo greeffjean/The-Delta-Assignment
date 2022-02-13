@@ -27,7 +27,7 @@ const HeaderToolbar: FC<THeaderToolbarProps> = ({ handleTitleChange }) => {
   return (
     <div className="header-toolbar" role="header-toolbar">
       <Typography variant="h3">Deals</Typography>
-      <FormControl sx={{ m: 1, width: "22ch" }} variant="outlined">
+      <FormControl sx={{ m: 1, maxwidth: "22ch" }} variant="outlined">
         <InputLabel htmlFor="outlined-adornment-password">Search</InputLabel>
         <OutlinedInput
           id="outlined-adornment-search"

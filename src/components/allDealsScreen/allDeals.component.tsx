@@ -1,18 +1,20 @@
 import { Alert, CircularProgress } from "@mui/material";
 import React, { FC, memo, useEffect, useState, useCallback } from "react";
 import { connect } from "react-redux";
-import { requestGamesData } from "../../redux/game/actions";
+import { requestDealLookup, requestGamesData } from "../../redux/main/actions";
 import {
   selectError,
   selectGamesData,
   selectIsLoading,
-} from "../../redux/game/selectors";
+} from "../../redux/main/selectors";
 import { TAppState } from "../../types/appState";
 import { TData, TPayloadData } from "../../types/commonTypes";
 import GameCard from "../common/gameCard/gameCard";
 import HeaderBar from "./components/headerBar";
 import "./style/style.scss";
 import FilterToolbar from "./components/filterBar";
+import { TDeal } from "../../redux/main/reducer";
+import { useHistory } from "react-router-dom";
 
 const mapStateToProps = (state: TAppState) => ({
   isLoading: selectIsLoading(state),
@@ -20,13 +22,14 @@ const mapStateToProps = (state: TAppState) => ({
   error: selectError(state),
 });
 
-const mapDispatchToProps = { requestGamesData };
+const mapDispatchToProps = { requestGamesData, requestDealLookup };
 
 type TGameProps = {
   isLoading: boolean;
-  games: TPayloadData | null;
+  games: TData[] | null;
   error: any;
   requestGamesData: () => void;
+  requestDealLookup: (id: string) => void
 };
 
 const AllDealsComponent: FC<TGameProps> = ({
@@ -34,11 +37,13 @@ const AllDealsComponent: FC<TGameProps> = ({
   games,
   error,
   requestGamesData,
+  requestDealLookup
 }) => {
   const [search, setSearch] = useState<string>("");
   const [selection, setSelection] = useState<TData[] | null>(null);
 
-  const data: null | TData[] = selection || games;
+  const data: TData[] | null = selection || games;
+  const history = useHistory();
 
   useEffect(() => {
     let isMounted = true;
@@ -75,6 +80,12 @@ const AllDealsComponent: FC<TGameProps> = ({
     setSelection(result);
   };
 
+  const handleViewDeal = (id: string) => {
+    requestDealLookup(id);
+    history.push(`deal/${id}`)
+  };
+
+
   const gamesList =
     data &&
     data.map((i) => {
@@ -91,6 +102,7 @@ const AllDealsComponent: FC<TGameProps> = ({
           title={title}
           description={[normalPrice, salePrice]}
           button={"View More"}
+          handleViewDeal={(id: string) => handleViewDeal(id)}
         />
       );
     });
@@ -116,7 +128,6 @@ const AllDealsComponent: FC<TGameProps> = ({
       {error && (
         <Alert severity="error">This is an error alert — {error}</Alert>
       )}
-      {isLoading && <CircularProgress />}
     </>
   );
 };

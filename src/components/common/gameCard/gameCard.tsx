@@ -12,6 +12,7 @@ type TGameCardProps = {
   title: string;
   description: string[];
   button: string;
+  handleViewDeal: (id: string) => void
 };
 
 const GameCard: React.FunctionComponent<TGameCardProps> = ({
@@ -20,6 +21,7 @@ const GameCard: React.FunctionComponent<TGameCardProps> = ({
   title,
   description,
   button,
+  handleViewDeal
 }) => {
   return (
     <>
@@ -44,7 +46,7 @@ const GameCard: React.FunctionComponent<TGameCardProps> = ({
           </div>
         </CardContent>
         <CardActions>
-          <Button variant="outlined" size="small">{button}</Button>
+          <Button onClick={() => handleViewDeal(id)} variant="outlined" size="small">{button}</Button>
         </CardActions>
       </Card>
     </>
