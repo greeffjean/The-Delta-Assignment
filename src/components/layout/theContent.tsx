@@ -29,14 +29,6 @@ const TheContent: FunctionComponent<TProps> = ({ userAccess, isLoading, error })
   return (
     <Container maxWidth={"lg"}>
       {routes}
-      <Redirect from={"/"} to={"/all-deals"} />
-      {isLoading && (
-        <div
-          style={{ width: "100%", display: "flex", justifyContent: "center" }}
-        >
-          <CircularProgress />
-        </div>
-      )}
     </Container>
   );
 };

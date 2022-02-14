@@ -115,16 +115,12 @@ const AllDealsComponent: FC<TGameProps> = ({
           {data ? (
             <div className="games-list">{gamesList}</div>
           ) : (
-            <Alert severity="info">There are no games available!</Alert>
+            <Alert severity="info">There are no game deals available!</Alert>
           )}
           {selection && selection.length < 1 && (
-            <Alert severity="info">There are no filter matches here!</Alert>
+            <Alert severity="info">There are no matching results here!</Alert>
           )}
         </>
-      )}
-
-      {error && (
-        <Alert severity="error">This is an error alert — {error}</Alert>
       )}
     </>
   );

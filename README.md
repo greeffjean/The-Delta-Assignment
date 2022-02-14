@@ -36,3 +36,7 @@ I spent quite a while on this, 7h, without Typescript I could have done it in 5h
 
 I always work as fast I can but I don't believe in cutting corners, I strive for quality! 
 
+# Playing with the application. 
+
+There is a lack of data on alot of the API deal items, lookup `Felix The Reaper` to get enough data to see all features functioning.
+
