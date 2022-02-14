@@ -10,7 +10,7 @@ To get spin up this project on your local machine you need a good interent conne
 
 # Reason for specific design and interfaces
 
-1. React Redux is a production standard state management tool, it offers devTools, powerful toolkit modules for nifty performance enancements, middleWare for async operations and its implmentation structure makes state management easy. 
+1. React Redux is a production standard state management tool, it offers devTools, powerful toolkit modules for nifty performance enhancements, middleWare for async operations and its implmentation structure makes state management easy to use. 
 
 2. Material UI library, easy to use, good looking UI Templates, its a respected and well used library, and fully responsive out the box. 
 
