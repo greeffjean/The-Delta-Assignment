@@ -1,8 +1,9 @@
-import { CircularProgress, Grid } from "@mui/material";
 import React, { FC, memo, useEffect } from "react";
+import { Grid } from "@mui/material";
 import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { requestDealLookup } from "../../redux/main/actions";
-import { TDeal, TDealLookup } from "../../redux/main/reducer";
+import { TDealLookup } from "../../redux/main/reducer";
 import {
   selectError,
   selectIsLoading,
@@ -39,8 +40,25 @@ const DealDetailComponent: FC<TDealDetailProps> = ({
   dealLookup,
   requestDealLookup,
 }) => {
+
+  const history = useHistory();
+
+  useEffect(() => { 
+    history.listen(location => {
+      if (history.action === 'POP') {
+        const id = location.pathname.split("/deal/")
+        requestDealLookup(id[1])
+      }
+    });
+
+  }, [dealLookup])
+
+
   const handleViewNewDeal = (id: string) => {
     requestDealLookup(id);
+    setTimeout(() => {
+      history.push(`/deal/${id}`);
+    }, 300);
   };
 
   return (

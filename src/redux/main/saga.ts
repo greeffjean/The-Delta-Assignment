@@ -43,6 +43,7 @@ function* reqDealLookupFunc(action: any) {
     .get(`https://www.cheapshark.com/api/1.0/deals?id=${action.payload}`)
     .then((response) => {
       data = response.data;
+      console.log(response.data);
     })
     .catch((err) => (error = err));
 
