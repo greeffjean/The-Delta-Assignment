@@ -34,7 +34,7 @@ I would improve the look and feel, integrated es-lint and used redux toolkit.
 
 # Time spent
 
-I spent 7h on the project, I added in some extras and I think one needs to take into account that I was using typescript and redux, I would in future rahter have used redux toolkit for quicker development. 
+I spent 7h on the project, I added in some extras over and aboce the brief and I think one needs to take into account that I was using typescript to type check most of the codebase and redux, I would in future rather have used redux toolkit for faster development, presently I can say that my redux implimentation in light of turn around time could be improved. 
 
 # Playing with the application. 
 
