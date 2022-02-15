@@ -20,21 +20,21 @@ To get spin up this project on your local machine you need a good interent conne
 
 At times there was some complexity with conflicting and mismatching types on component props, creating and reusing a type directory helps me to recognise and reuse types with ease. 
 
-Some old tricks Ive learned worth mentioning is debouncing functions for input searchBoxes that make API calls on typing.
+I found the iterative redux implimentation used along with decalring types for most moving parts of the codebase was quite time costly.
 
 # Resources used
 
 API Mocker -- https://mswjs.io/
+UI Lib - Material UI
+State Management - Redux + Redux Middleware
 
 # If I had more time
 
-I would improve the look and feel, and add esLint to the project.
+I would improve the look and feel, integrated es-lint and used redux toolkit.
 
 # Time spent
 
-I spent quite a while on this, 7h, without Typescript I could have done it in 5h, and if I was not using redux maybe 4h. 
-
-I always work as fast I can but I don't believe in cutting corners, I strive for quality! 
+I spent 7h on the project, I added in some extras and I think one needs to take into account that I was using typescript and redux, I would in future rahter have used redux toolkit for quicker development. 
 
 # Playing with the application. 
 
